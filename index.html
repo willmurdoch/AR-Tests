@@ -24,26 +24,27 @@
 
     <!-- a-frame scene sourceType: webcam;  sourceType: image; sourceUrl: images/ref.jpg; -->
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
-      arjs="patternRatio: 1; trackingMethod: best; debugUIEnabled: true; sourceType: image; sourceUrl: images/ref.jpg; ">
+      arjs="patternRatio: 1; trackingMethod: best; debugUIEnabled: true; sourceType: webcam; ">
 
       <a-assets>
         <video id="phil" webkit-playsinline playsinline allow="autoplay" autoplay loop muted src="phil.mp4"></video>
       </a-assets>
 
-      <a-nft type="nft" url="ar/marker/marker" smooth="true" smoothCount="10" smoothTolerance="0.1" smoothThreshold="5" size="1">
-        <a-video src="#phil" width="250" height="250" rotation="-90 0 0" position="0 0 0"></a-video>
+      <a-nft videohandler type="nft" url="ar/marker/marker" smooth="true" smoothCount="10000" smoothTolerance="10" smoothThreshold="10">
+        <a-video src="#phil" width="100" height="100" rotation="-90 0 0" position="39 0 -130"></a-video>
+        <!-- <a-entity gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf" scale="5 5 5" position="50 150 0"> -->
         <!-- <a-image id="sprites" src="sprites-compressed.png" sprite-sheet="cols: 10; rows: 9; progress: 0;" width="200" height="300" rotation="-90 0 0" position="0 0 0"></a-image> -->
       </a-nft>
 
       <a-entity camera></a-entity>
     </a-scene>
 
-    <!-- <script src="js/main.js"></script> -->
-    <script>
+    <script src="js/main.js"></script>
+    <!-- <script>
       var myAnchor = document.querySelector('a-nft');
       myAnchor.addEventListener('markerFound', (e) => {
         alert('aaaaa');
       });
-    </script>
+    </script> -->
   </body>
 </html>
